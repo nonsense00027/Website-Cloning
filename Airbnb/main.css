@@ -164,9 +164,16 @@ main {
   grid-gap: 20px;
 }
 
-.showcase-img > div {
+/* .showcase-img > div {
   border: 1px solid #262626;
   border-radius: 20px;
+} */
+.showcase-img .tab-1,
+.tab-2,
+.tab-3 {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .showcase-img img {
@@ -269,7 +276,7 @@ main {
 
 /* SHOWCASE 3 */
 .showcase-3 {
-  margin: 80px 0;
+  padding: 50px 0;
   color: #262626;
 }
 
@@ -308,22 +315,57 @@ main {
   font-size: 20px;
 }
 
-.content-2-text > div {
+.content-2-text > ul li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding-bottom: 20px;
-  padding-right: 5px;
+  padding: 20px 0;
 }
 
-.content-2-text div:last-child,
-div:nth-last-child(2),
-div:nth-last-child(3) {
-  border: 0;
+.content-2-text ul.col-1 li:last-child,
+ul.col-2 li:last-child,
+ul.col-3 li:last-child {
+  border-bottom: 0;
 }
+
 .showcase-4 .container .content-2-text {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
   margin: 30px 0;
+}
+
+@media (max-width: 850px) {
+  .showcase-2 .container .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .showcase-2 .container .content .content-txt {
+    width: 100%;
+  }
+
+  .showcase-2 .container .content .content-txt p {
+    padding: 20px 0;
+  }
+
+  .showcase-3 .container .content-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 30px 0;
+  }
+
+  .showcase-3 .container .content-1 .text-1,
+  .content-1 .text-2 {
+    width: 100%;
+    padding-bottom: 20px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -332,7 +374,7 @@ div:nth-last-child(3) {
   }
 
   .showcase-2-img img {
-    /* width: 100%; */
+    width: 100%;
     height: 50vh;
   }
 
@@ -355,5 +397,9 @@ div:nth-last-child(3) {
   .showcase-2-img .img-content-4 {
     grid-column: span 1;
     grid-row: span 1;
+  }
+
+  .showcase-4 .container .content-2-text {
+    grid-template-columns: 1fr 1fr;
   }
 }
